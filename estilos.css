@@ -1,0 +1,177 @@
+/* GENERAL */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 1fr;
+    grid-template-areas: "contenido imagen";
+    width: 100%;
+    height: 100%;
+}
+
+/* CONTENIDO */
+.contenido {
+    grid-area: contenido;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-size: 100% 100%;
+    padding: 3rem 12rem 10rem 10rem;
+}
+
+.info {
+    height: 80%;
+    margin-top: 5rem;
+}
+
+h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+
+.primero {
+    font-weight: 300;
+    display: block;
+    color: hsl(0, 36%, 70%);
+    
+}
+
+.segundo {
+    font-weight: 600;
+    display: block;
+    color: hsl(0, 6%, 24%);
+}
+
+.tercero {
+    font-weight: 600;
+    display: block;
+    color: hsl(0, 6%, 24%);
+}
+
+.texto p {
+    color: hsl(0, 93%, 68%);
+    margin-top: 1rem;
+    line-height: 2;
+    font-size: .9rem;
+}
+
+.form {
+    width: 100%;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.form input[type="email"] {
+    padding: 1rem 1.5rem;
+    border-radius: 7rem;
+    width: 100%;
+    border: 1px solid hsl(0, 80%, 86%);
+    color: hsl(0, 80%, 86%);
+}
+
+.form input[type="email"]::placeholder {
+    color: hsl(0, 80%, 86%);
+}
+
+.form input[type="email"]:focus {
+    outline: none;
+}
+
+.form button {
+    width: 17%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7rem;
+    height: 100%;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    box-shadow: 2px 4px 10px hsl(0, 36%, 70%);
+    cursor: pointer;
+}
+
+.form button:hover {
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+.form svg {
+    color: linear-gradient(135deg, hsl(0, 0%, 100%),  hsl(0, 100%, 98%));
+}
+
+/* IMAGEN */
+.imagen {
+    grid-area: imagen;
+    background-image: url("images/hero-desktop.jpg");
+    background-size: 100% 100%;
+}
+
+@media (max-width: 1150px) and  (min-width: 425px){
+    h1 {
+        font-size: 2rem;
+    }
+
+    .texto p {
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 425px) {
+    html, body {
+        width: 100vw;
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 300px 1fr;
+        grid-template-areas: "imagen"
+                             "contenido";
+        width: 100%;
+        height: 100%;
+    }
+
+    .contenido {
+        grid-area: contenido;
+        background-image: url("images/bg-pattern-desktop.svg");
+        background-size: 100% 100%;
+        padding: 3rem 1rem;
+    }
+
+    .imagen {
+        grid-area: imagen;
+        background-image: url("images/hero-desktop.jpg");
+        background-size: 100% 115%;
+        background-position: center;
+    }
+
+    .info {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .texto p {
+        font-size: .8rem;
+    }
+}
